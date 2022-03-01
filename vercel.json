@@ -1,9 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "api/**/*.php": {
-            "runtime": "vercel-php@0.4.0"
-        }
+        "api/index.php": { "runtime": "{{ phpVercelVersion }}" }
     },
     "routes": [{
         "src": "/(.*)",
@@ -11,8 +9,8 @@
     }],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_URL": "https://laravel-mix-app.vercel.app/",
+        "APP_DEBUG": "true",
+        "APP_URL": "{{ appUrl }}",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
